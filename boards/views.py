@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-
 #  Imports from this folder
 from .models import Board,Topic
 

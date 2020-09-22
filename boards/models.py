@@ -11,7 +11,7 @@ class Board(models.Model):
     description = models.TextField(max_length=500)
 
     def __str__(self):
-	    return self.name
+        return self.name
 
     def save(self, *args, **kwargs):
         if not self.id:
@@ -21,7 +21,6 @@ class Board(models.Model):
 
     def get_absolute_url(self):
         return '/board/{}/'.format(self.slug)
-
 
 
 class Topic(models.Model):

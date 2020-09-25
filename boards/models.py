@@ -13,7 +13,7 @@ class Board(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("board_details", args=(self.slug,))
+        return reverse("detail", args=(self.slug,))
 
 
 class Topic(models.Model):

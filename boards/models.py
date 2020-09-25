@@ -10,7 +10,7 @@ class Board(models.Model):
     description = models.TextField(max_length=500)
 
     def __str__(self):
-        return self.name
+        return str(self.name)
 
     def get_absolute_url(self):
         return reverse("detail", args=(self.slug,))
@@ -29,7 +29,7 @@ class Topic(models.Model):
         return self.subject
 
     def get_absolute_url(self):
-        return reverse("topic_details", args=(self.slug,))
+        return reverse("get_topic_detail", args=(self.slug,))
 
 
 class Post(TimeStampedModel):

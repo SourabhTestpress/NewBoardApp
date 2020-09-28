@@ -29,7 +29,7 @@ class Topic(models.Model):
         return self.subject
 
     def get_absolute_url(self):
-        return reverse("topic_details", args=(self.slug,))
+        return reverse("get_topic_detail", args=(self.slug,))
 
 
 class Post(TimeStampedModel):

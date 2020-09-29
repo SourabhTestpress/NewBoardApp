@@ -61,7 +61,7 @@ class TopicListViewTests(TestCase):
 
     def test_rendering_of_all_topics_url_provides_correct_template(self):
         response = self.client.get(reverse("all_topics"))
-        self.assertTemplateUsed(response, "boards/topic_list.html")
+        self.assertTemplateUsed(response, "topic/list.html")
 
     def test_all_topics_url_response_contains_10_objects(self):
         response = self.client.get(reverse("all_topics"))

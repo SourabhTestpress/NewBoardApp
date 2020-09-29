@@ -2,40 +2,11 @@
 
 
 {% block head %}
-	<title>Boards</title>
+  <title>Boards</title>
 {% endblock %}
 
 
 
 {% block body %}
-	<div class="container">
-		<table class="table table-striped">
-		  <thead>
-		    <tr>
-		      <th scope="col">Serial No.</th>
-		      <th scope="col">Name</th>
-		      <th scope="col">Topics</th>
-		      <th scope="col">Post</th>
-		      <th scope="col">Last Post</th>
-		    </tr>
-		  </thead>
-		  <tbody>
-
-		    {% for obj in boards %}
-		    <tr>
-		      <th scope="row">{{forloop.counter}}</th>
-		      <td>
-		      	<a href={{obj.get_absolute_url}}>
-		      		{{obj.name}}
-		      	</a>
-		      </td>
-		      <td>{{obj.topics.count}}</td>
-		      <td>0</td>
-		      <td></td>
-		    </tr>
-		    {% endfor %}
-
-		  </tbody>
-		</table>
-	</div>
+  {% include 'boards/tailwind_components/table.html' with boards=boards %}
 {% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block head %}
+  <title>{{board}}</title>
+{% endblock %}
+
+
+
+{% block body %}
+  {% include 'boards/tailwind_components/breadcrums.html' with board=board %}
+
+  <div class="button-for-adding-topic mx-5 my-3">
+  	<span class="inline-flex rounded-md shadow-sm">
+	  <button type="button" class="inline-flex items-center px-6 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition ease-in-out duration-150">
+	    Add New Topic
+	  </button>
+	</span>
+  </div>
+
+  {% include 'boards/tailwind_components/table_detail.html' with board=board %}
+  }
+{% endblock %}

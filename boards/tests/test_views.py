@@ -55,5 +55,6 @@ class BoardDetailView(TestCase):
         self.assertEquals(view.func, board_detail)
 
     def test_board_detail_view_produces_status_code_200(self):
-        response = self.client.get(reverse("detail", args=(self.board_obj.slug,)))
+        request = self.factory.get(reverse("detail", args=(self.board_obj.slug,)))
+        response = board_detail(request, self.board_obj.slug)
         self.assertEquals(200, response.status_code)

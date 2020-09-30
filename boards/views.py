@@ -11,7 +11,9 @@ def board_list(request):
 
 
 def board_detail(request, slug):
-    return HttpResponse("Yet to be Implemented")
+    board = get_object_or_404(Board, slug=slug)
+    context = {"board": board}
+    return render(request, "boards/detail.html", context)
 
 
 def topic_list(request):

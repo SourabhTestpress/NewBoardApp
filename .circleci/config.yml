@@ -16,7 +16,7 @@ jobs:
           command: ./manage.py test
           name: Test
 
-  deploy:
+  deployment:
     machine:
       enabled: true
     steps:
@@ -37,7 +37,7 @@ workflows:
         filters:
           branches:
             ignore: hi
-      - deploy:
+      - deployment:
         filters:
           branches:
             only: master

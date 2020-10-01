@@ -33,8 +33,11 @@ jobs:
 workflows:
   main:
     jobs:
-      - build-and-test
+      - build-and-test:
+        filters:
+          branches:
+            ignore: hi
       - deploy:
         filters:
           branches:
-            only: staging
+            only: master

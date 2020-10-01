@@ -20,13 +20,15 @@ jobs:
     machine:
       enabled: true
     steps:
-      - checkout
-      - run:
-           name: Deploy Master to Heroku
-           command: |
-             git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-
-
+          - checkout
+          - when:
+              condition:
+                equal: [ master, << pipeline.git.branch >> ]
+              steps:
+                - run:
+                  name: Deploy Master to Heroku
+                  command: |
+                    git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
 workflows:
   main:
     jobs:

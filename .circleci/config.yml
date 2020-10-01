@@ -37,7 +37,7 @@ workflows:
       - build-and-test
       - deploy:
           requires:
-            - build
+            - build-and-test
           filters:
             branches:
               only: sequential-branch-filter

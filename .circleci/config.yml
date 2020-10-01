@@ -33,4 +33,5 @@ workflows:
       - build-and-test
       - deploy:
         when:
-          - equal: [ master, << pipeline.git.branch >> ]
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]

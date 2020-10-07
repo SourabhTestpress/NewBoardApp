@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     # customapps
     "boards",
+    "widget_tweaks",
 ]
 
 MIDDLEWARE = [
